@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Products Page</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="header">
+<a href="#" class="logo"><i class="fas fa-shopping-basket"></i> Basket </a>
+<nav class="navbar">
+<a href="index.html">home</a>
+</nav>
+
+<div class="icons">
+<div class="fas fa-bars" id="menu-btn"></div>
+<div class="fas fa-search" id="search-btn"></div>
+<a href="cart.html" id="cart-btn">
+<div class="fas fa-shopping-cart"></div>
+</a>
+<div class="fas fa-user" id="login-btn"></div>
+</div>
+
+<form action="" class="search-form">
+<input type="search" id="search-box" placeholder="search here...">
+<label for="search-box" class="fas fa-search"></label>
+</form>
+</header>
+<!-- header section ends -->
+
+<!-- home section starts -->
+<section class="home" id="home">
+<div class="content">
+<h3> <span>Sort</span> </h3>
+<p>sort everything the way you like</p>
+</div>
+</section>
+
+<section class="products" id="products-page5">
+<h1 class="heading"> our <span>products</span> </h1>
+
+<!-- Removed Debug UI -->
+
+<div class="filter-container" style="align-items: center;">
+<select id="categoryFilter">
+<option value="">All Categories</option>
+<option value="Fruits">Fruits</option>
+<option value="Snack">Snacks</option>
+<option value="Dairy">Dairy</option>
+</select>
+
+<select id="sortFilter">
+<option value="">Sort By</option>
+<option value="low-to-high">Price: Low to High</option>
+<option value="high-to-low">Price: High to Low</option>
+</select>
+</div>
+
+<div id="loading" class="loading">Loading products...</div>
+<div id="product-list" class="products-container"></div>
+<div id="error-message" class="error-message" style="display: none;"></div>
+</section>
+
+<!-- footer section starts -->
+<section class="footer" id="footer">
+<div class="box-container">
+<div class="box">
+<h3>Basket <i class="fas fa-shopping-basket"></i></h3>
+<p>please follow all our social medias for our updates and best offers.</p>
+<div class="share">
+<a href="#" class="fab fa-facebook-f"></a>
+<a href="#" class="fab fa-twitter"></a>
+<a href="#" class="fab fa-instagram"></a>
+<a href="#" class="fab fa-linkedin"></a>
+</div>
+</div>
+<div class="box">
+<h3>content info</h3>
+<a href="#" class="links"><i class="fas fa-phone"></i> +966-50-3490970 </a>
+<a href="#" class="links contact-through-email"><i class="fas fa-envelope"></i> connectwithBaskit@gmail.com </a>
+<a href="#" class="links"><i class="fas fa-map-marker-alt"></i> Riyadh, saudiArabai - 5050 </a>
+</div>
+<div class="box">
+<h3>quick links</h3>
+<a href="index.html" class="links"><i class="fas fa-arrow-right"></i> home </a>
+<a href="#products" class="links"><i class="fas fa-arrow-right"></i> products </a>
+</div>
+</div>
+</section>
+<!-- footer section ends -->
+
+<script>
+// DOM elements
+const categoryFilter = document.getElementById('categoryFilter');
+const sortFilter = document.getElementById('sortFilter');
+const productList = document.getElementById('product-list');
+const loadingElement = document.getElementById('loading');
+const errorMessage = document.getElementById('error-message');
+
+let useMockData = true; // Always use mock data
+
+// Mock data fallback
+const mockProducts = [
+{ "name": "Apple", "price": 3, "image": "images/appleb.webp", "category": "fruits" },
+{ "name": "Orange", "price": 2.5, "image": "images/orangeb.webp", "category": "fruits" },
+{ "name": "Chips", "price": 5.75, "image": "images/chipsb.webp", "category": "snack" },
+{ "name": "Milk", "price": 5.99, "image": "images/milkb.webp", "category": "dairy" },
+{ "name": "Mango", "price": 7.99, "image": "images/mangob.webp", "category": "fruits" },
+{ "name": "Chocolate Milk", "price": 3, "image": "images/chocolate milk.webp", "category": "dairy" },
+{ "name": "Cheddar", "price": 2.5, "image": "images/cheddar.webp", "category": "dairy" },
+{ "name": "Mozzarella", "price": 5.75, "image": "images/mochesse.webp", "category": "dairy" },
+{ "name": "Chesse", "price": 4.25, "image": "images/cheese.webp", "category": "dairy" },
+{ "name": "yogurt", "price": 2.5, "image": "images/yogurtb.webp", "category": "dairy" },
+{ "name": "Blue Berry Yogurt", "price": 30, "image": "images/berryyogurt.webp", "category": "dairy" },
+{ "name": "Milkshake", "price": 7.99, "image": "images/milkshake.webp", "category": "dairy" },
+{ "name": "Cherries", "price": 30, "image": "images/cherriesb.webp", "category": "fruits" },
+{ "name": "Pear", "price": 2.5, "image": "images/Pear.webp", "category": "fruits" },
+{ "name": "Pinaple", "price": 5.99, "image": "images/pinaple.webp", "category": "fruits" },
+{ "name": "Respberry", "price": 4.25, "image": "images/raspberry.webp", "category": "fruits" },
+{ "name": "Watermelon", "price": 5.75, "image": "images/watermelon.webp", "category": "fruits" },
+{ "name": "Biscits", "price": 7.99, "image": "images/bic.webp", "category": "snack" },
+{ "name": "Gummy", "price": 30, "image": "images/gummy.webp", "category": "snack" },
+{ "name": "Popcorn", "price": 2.5, "image": "images/popcorn.webp", "category": "snack" },
+{ "name": "Reeses", "price": 5.99, "image": "images/reeses.webp", "category": "snack" },
+{ "name": "Chocolate", "price": 4.25, "image": "images/chocolateb.webp", "category": "snack" },
+{ "name": "Oreo", "price": 2.5, "image": "images/oreo.webp", "category": "snack" },
+{ "name": "Nuts", "price": 3, "image": "images/nutsb.webp", "category": "snack" }
+];
+
+// Show error message
+function showError(message) {
+errorMessage.textContent = message;
+errorMessage.style.display = 'block';
+loadingElement.style.display = 'none';
+}
+
+// Hide error message
+function hideError() {
+errorMessage.style.display = 'none';
+}
+
+// Render products
+function renderProducts(products) {
+productList.innerHTML = '';
+if (products.length === 0) {
+productList.innerHTML = '<p class="no-products">No products found matching your criteria.</p>';
+return;
+}
+
+products.forEach(product => {
+const productElement = document.createElement('div');
+productElement.classList.add('product');
+productElement.innerHTML = `
+<img src="${product.image}" alt="${product.name}" onerror="this.src='https://via.placeholder.com/200x150?text=No+Image'">
+<h3>${product.name}</h3>
+<div class="price">${product.price.toFixed(2)} SR</div>
+<div class="stars">
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star-half-alt"></i>
+</div>
+<a href="#" class="btn add-to-cart-btn">Add To Cart</a>
+`;
+productList.appendChild(productElement);
+});
+}
+
+// Filter and sort products
+function filterAndSortProducts(products, category, sort) {
+let filteredProducts = products;
+if (category) {
+filteredProducts = filteredProducts.filter(p => p.category.toLowerCase() === category.toLowerCase());
+}
+if (sort === 'low-to-high') filteredProducts.sort((a, b) => a.price - b.price);
+if (sort === 'high-to-low') filteredProducts.sort((a, b) => b.price - a.price);
+return filteredProducts;
+}
+
+// Load products
+async function loadProducts() {
+loadingElement.style.display = 'block';
+hideError();
+productList.innerHTML = '';
+
+const category = categoryFilter.value;
+const sort = sortFilter.value;
+
+try {
+await new Promise(resolve => setTimeout(resolve, 300));
+const products = filterAndSortProducts(mockProducts, category, sort);
+loadingElement.style.display = 'none';
+renderProducts(products);
+} catch (err) {
+console.error(err);
+showError('Failed to load products.');
+}
+}
+
+// Event listeners
+categoryFilter.addEventListener('change', loadProducts);
+sortFilter.addEventListener('change', loadProducts);
+
+// Initialize
+document.addEventListener('DOMContentLoaded', async () => {
+loadProducts();
+});
+</script>
+<script src="cart.js"></script>
+</body>
+</html>

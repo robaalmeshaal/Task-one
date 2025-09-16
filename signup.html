@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup page</title>
+    
+    <!-- swiper cdn link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.0.0/swiper-bundle.min.css" />
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+    <!-- header section starts -->
+
+    <header class="header">
+        <a href="#" class="logo"><i class="fas fa-shopping-basket"></i> Basket </a>
+        <nav class="navbar">
+           
+           
+            
+        </nav>
+
+        <div class="icons">
+            <div class="fas fa-bars" id="menu-btn"></div>
+            
+            
+        </div>
+
+        
+
+        
+           
+
+        
+
+    </header>
+    <!-- header section ends -->
+    <!-- home section starts -->
+
+    <section class="home" id="home">
+        <div class="content">
+            <h3>Get started with <span>Basket</span> and Signup</h3>
+            <p>sign up and start your new journy with us get the best discounts and prices.</p>
+        </div>
+        <div id="signUpMessage" class="messageDiv" style="display: none;"></div>
+    </section>
+
+    <!-- home section ends -->
+    <!--Signup form-->
+    <form id="form" action="" class=""> 
+            <div class="form-actions">
+            <h1>Signup now</h1>
+            </div>
+            <div id="signInMessage" class="messageDiv" style="display: none;"></div>
+            <div>
+            <input required type="text" placeholder="First name" id="firstname-input" name="firstname"class="box">
+            </div>
+            <div>
+            <input required type="text" placeholder="Last name" id="lastname-input" name="lastname"class="box">
+            </div>
+            <div>
+            <input required type="text" placeholder="Username" id="username-input" name="username" class="box">
+            </div>
+            <div>     
+            <input required type="email" placeholder="Email" id="email-input" name="email" class="box">
+            </div>
+            <div>
+            <input required type="password" placeholder="Password" id="password-input" name="password" class="box">
+            </div>
+            <div>
+            <input required type="password" placeholder="Repeat Password" id="repeat-password-input" name="repeat-password" class="box">
+            </div>
+            <p id="error_message"></p>
+            <button type="submit" id="submitSignUp" class="btn">Sign up</button>
+                    <div class="form-actions">
+                    <p>Already have an account? <a href="login.html">login</a></p>
+                    </div>
+        </form>     
+           
+    <!--signup form ends--> 
+    <!-- footer section starts -->
+
+    <section class="footer" id="footer">
+        <div class="box-container">
+            <div class="box">
+                <h3>Basket <i class="fas fa-shopping-basket"></i></h3>
+                <p>please follow all our social medias for our updates and best offers.</p>
+                <div class="share">
+                    <a href="#" class="fab fa-facebook-f"></a>
+                    <a href="#" class="fab fa-twitter"></a>
+                    <a href="#" class="fab fa-instagram"></a>
+                    <a href="#" class="fab fa-linkedin"></a>
+                </div>
+            </div>
+            <div class="box">
+                <h3>content info</h3>
+                <a href="#" class="links"><i class="fas fa-phone"></i> +966-50-3490970 </a>
+                <a href="#" class="links contact-through-email"><i class="fas fa-envelope"></i> connectwithBaskit@gmail.com </a>
+                <a href="#" class="links"><i class="fas fa-map-marker-alt"></i> Riyadh, saudiArabai - 5050 </a>
+            </div>
+           
+            
+        
+    </section>
+
+    <!-- footer section ends -->
+
+    <!-- custom javascript section starts -->
+
+    <!-- Move these script tags to the end of the <body> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.0.0/swiper-bundle.min.js"></script>
+    <script src="script.js"></script> 
+
+    <!-- custom javascript section ends -->
+
+   <script>
+document.getElementById("submitSignUp").addEventListener("click", async (e) => {
+  e.preventDefault();
+
+  const payload = {
+    firstname: document.getElementById("firstname-input").value.trim(),
+    lastname:  document.getElementById("lastname-input").value.trim(),
+    username:  document.getElementById("username-input").value.trim(),
+    email:     document.getElementById("email-input").value.trim(),
+    password:  document.getElementById("password-input").value,
+  };
+
+  try {
+    const res = await fetch("http://localhost:5000/signup", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+
+    const data = await res.json();
+
+    if (!res.ok || !data.success) {
+      alert(data.message || "Signup failed.");
+      return;
+    }
+
+    alert("Signup successful!");
+    window.location.href = "login.html";
+  } catch (err) {
+    console.error("Signup failed:", err);
+    alert("Could not connect to server. Please check if backend is running.");
+  }
+});
+</script>
+
+</body>
+</html>

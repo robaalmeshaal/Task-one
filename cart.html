@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Cart</title>
+  <!-- font awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+  <!-- swiper (optional if you want sliders later) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.0.0/swiper-bundle.min.css">
+  <!-- custom css -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<header class="header">
+        <a href="#" class="logo"><i class="fas fa-shopping-basket"></i> Basket </a>
+        <nav class="navbar">
+         <a href="index.html">home</a>   
+            
+        </nav>
+
+        <div class="icons">
+            <div class="fas fa-bars" id="menu-btn"></div>
+            <div class="fas fa-search" id="search-btn"></div>
+            <a href="cart.html" id="cart-btn">
+              <div class="fas fa-shopping-cart"></div>
+            </a>
+            <div class="fas fa-user" id="login-btn"></div>
+        </div>
+
+        <form action="" class="search-form">
+            <input type="search" id="search-box" placeholder="search here...">
+            <label for="search-box" class="fas fa-search"></label>
+        </form>
+
+
+    </header>
+    <!-- header section ends -->
+
+    <!-- home section starts -->
+
+    <section class="home" id="home">
+        <div class="content">
+            <h3> <span>Your Cart</span> </h3>
+        </div>
+    </section>
+
+    <!-- home section ends -->
+<body>
+
+<!-- cart section -->
+<section class="cart" id="cart">
+  <div id="cartItems" class="cart-items"></div>
+  <div class="cart-total">
+    <h3>Total: <span id="cartTotal">0.00SR</span></h3>
+    <button id="checkoutBtn" class="btn">Checkout</button>
+  </div>
+</section>
+
+<script>
+// Cart logic
+const cartItemsDiv = document.getElementById("cartItems");
+const cartTotalSpan = document.getElementById("cartTotal");
+
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+function renderCart() {
+  cartItemsDiv.innerHTML = "";
+  if (cart.length === 0) {
+    cartItemsDiv.innerHTML = "<p>Your cart is empty!</p>";
+    cartTotalSpan.textContent = "0.00SR";
+    return;
+  }
+
+  let total = 0;
+  
+
+  cart.forEach((item, index) => {
+    total += parseFloat(item.price) * item.quantity;
+
+    const div = document.createElement("div");
+    div.classList.add("cart-item");
+    div.innerHTML = `
+      <img src="${item.image}" alt="${item.name}">
+      <div class="item-info">
+        <h3>${item.name}</h3>
+        <p>Price: ${item.price}SR</p>
+        <div class="quantity-controls">
+          <button class="decrease" data-index="${index}">-</button>
+          <span>${item.quantity}</span>
+          <button class="increase" data-index="${index}">+</button>
+        </div>
+        <button class="remove-btn" data-index="${index}">Remove</button>
+      </div>
+    `;
+    cartItemsDiv.appendChild(div);
+  });
+
+  cartTotalSpan.textContent = total.toFixed(2) + "SR";
+
+  // Remove item
+  document.querySelectorAll(".remove-btn").forEach(btn => {
+    btn.addEventListener("click", e => {
+      const idx = e.target.dataset.index;
+      cart.splice(idx, 1);
+      localStorage.setItem("cart", JSON.stringify(cart));
+      renderCart();
+    });
+  });
+
+  // Increase quantity
+  document.querySelectorAll(".increase").forEach(btn => {
+    btn.addEventListener("click", e => {
+      const idx = e.target.dataset.index;
+      cart[idx].quantity += 1;
+      localStorage.setItem("cart", JSON.stringify(cart));
+      renderCart();
+    });
+  });
+
+  // Decrease quantity
+  document.querySelectorAll(".decrease").forEach(btn => {
+    btn.addEventListener("click", e => {
+      const idx = e.target.dataset.index;
+      if (cart[idx].quantity > 1) {
+        cart[idx].quantity -= 1;
+      } else {
+        cart.splice(idx, 1);
+      }
+      localStorage.setItem("cart", JSON.stringify(cart));
+      renderCart();
+    });
+  });
+}
+
+renderCart();
+
+// Checkout button
+document.getElementById("checkoutBtn").addEventListener("click", () => {
+  alert("Checkout");
+});
+</script>
+<!-- footer section starts -->
+
+    <section class="footer" id="footer">
+        <div class="box-container">
+            <div class="box">
+                <h3>Basket <i class="fas fa-shopping-basket"></i></h3>
+                <p>please follow all our social medias for our updates and best offers.</p>
+                <div class="share">
+                    <a href="#" class="fab fa-facebook-f"></a>
+                    <a href="#" class="fab fa-twitter"></a>
+                    <a href="#" class="fab fa-instagram"></a>
+                    <a href="#" class="fab fa-linkedin"></a>
+                </div>
+            </div>
+            <div class="box">
+                <h3>content info</h3>
+                <a href="#" class="links"><i class="fas fa-phone"></i> +966-50-3490970 </a>
+                <a href="#" class="links contact-through-email"><i class="fas fa-envelope"></i> connectwithBaskit@gmail.com </a>
+                <a href="#" class="links"><i class="fas fa-map-marker-alt"></i> Riyadh, saudiArabai - 5050 </a>
+            </div>
+            <div class="box">
+                <h3>quick links</h3>
+                <a href="index.html" class="links"><i class="fas fa-arrow-right"></i> home </a>
+                <a href="#products" class="links"><i class="fas fa-arrow-right"></i> products </a>
+                
+                
+            </div>
+            
+        
+    </section>
+
+    <!-- footer section ends -->
+</body>
+</html>

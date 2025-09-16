@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping website</title>
+
+    
+
+    <!-- swiper cdn links -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.0.0/swiper-bundle.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.0.0/swiper-bundle.min.js"></script>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+    <!-- header section starts -->
+
+    <header class="header">
+        <a href="#" class="logo"><i class="fas fa-shopping-basket"></i> Basket </a>
+        <nav class="navbar">
+            <a href="#home">home</a>
+            <a href="#features">features</a>
+            <a href="#categories">categories</a>
+            <a href="products.html">products</a>
+            <a href="#review">review</a>
+            
+        </nav>
+
+        <div class="icons">
+            <div class="fas fa-bars" id="menu-btn"></div>
+            <div class="fas fa-search" id="search-btn"></div>
+            <a href="cart.html" id="cart-btn">
+              <div class="fas fa-shopping-cart"></div>
+            </a>
+            <div class="fas fa-user" id="login-btn"></div>
+        </div>
+
+        <form action="" class="search-form">
+            <input type="search" id="search-box" placeholder="search here...">
+            <label for="search-box" class="fas fa-search"></label>
+        </form>
+
+        
+            
+          
+    </header>
+    <!-- header section ends -->
+
+    <!-- home section starts -->
+
+    <section class="home" id="home">
+        <div class="content">
+            <h3>Clean and <span>Fresh</span> products for you</h3>
+            <p>all are prodects are made sure that they are clean and fresh for you to eat and enjoy.</p>
+            <a href="products.html" class="btn">shop now</a>
+        </div>
+    </section>
+
+    <!-- home section ends -->
+
+    <!-- features section starts -->
+
+    <section class="features" id="features">
+        <h1 class="heading">our <span>features</span></h1>
+        <div class="box-container">
+            <div class="box">
+                <img src="image/feature-img-1.png" alt="">
+                <h3>100% clean and fresh</h3>
+                <p>our prodects are made sure that they are clean and fresh for you to eat and enjoy.</p>
+                
+            </div>
+            <div class="box">
+                <img src="image/feature-img-2.png" alt="">
+                <h3>free delivery</h3>
+                <p>get free delivery when reatching 100SR of products to buy.</p>
+                
+            </div>
+            <div class="box">
+                <img src="image/feature-img-3.png" alt="">
+                <h3>easy payments</h3>
+                <p>we have many payment types applepay, credit and cash at delivery</p>
+                
+            </div>
+           
+        </div>
+    </section>
+
+    <!-- features section ends -->
+
+    <!-- categories section starts -->
+
+    <section class="categories" id="categories">
+        <h1 class="heading">product <span>categories</span></h1>
+        <div class="box-container">
+            <div class="box">
+                <img src="image/cat-1.png" alt="">
+                <img src="images/fruitsb.webp">
+                <h3>Fruit</h3>
+                <p>upto 35% off</p>
+                <a href="fruit.html" class="btn">shop now</a>
+            </div>
+            <div class="box">
+                <img src="image/cat-2.png" alt="">
+                <img src="images/Dairy.webp">
+                <h3>Dairy</h3>
+                <p>upto 45% off</p>
+                <a href="dairy.html" class="btn">shop now</a>
+            </div>
+            <div class="box">
+                <img src="image/cat-3.png" alt="">
+                <img src="images/snacks.avif">
+                <h3>Snacks</h3>
+                <p>upto 15% off</p>
+                <a href="snacks.html" class="btn">shop now</a>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- categories section ends -->
+     <!-- products section starts -->
+
+   <section class="products" id="products-page1">
+    <h1 class="heading"> our <span>products</span> </h1>
+
+    <div class="swiper product-slider">
+        <div class="swiper-wrapper">
+            <!-- Product 1 -->
+            <div class="swiper-slide box" data-id="apple" data-name="Apple" data-price="3.00" data-img="images/appleb.webp">
+                <img src="images/appleb.webp">
+                <h3>Apple</h3>
+                <div class="price">3.00SR</div>
+                <div class="stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <a href="#" class="btn add-to-cart-btn">add to cart</a>
+            </div>
+            <!-- Product 2 -->
+            <div class="swiper-slide box" data-id="oranges" data-name="Oranges" data-price="2.50" data-img="images/orangeb.webp">
+                <img src="images/orangeb.webp">
+                <h3>Oranges</h3>
+                <div class="price">2.50SR</div>
+                <div class="stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <a href="#" class="btn add-to-cart-btn">add to cart</a>
+            </div>
+            <!-- Product 3 -->
+            <div class="swiper-slide box" data-id="chips" data-name="Chips" data-price="5.75" data-img="images/chipsb.webp">
+                <img src="images/chipsb.webp">
+                <h3>Chips</h3>
+                <div class="price">5.75SR</div>
+                <div class="stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <a href="#" class="btn add-to-cart-btn">add to cart</a>
+            </div>
+            <!-- Product 4 -->
+            <div class="swiper-slide box" data-id="chocolate" data-name="Chocolate" data-price="4.25" data-img="images/chocolateb.webp">
+                <img src="images/chocolateb.webp">
+                <h3>Chocolate</h3>
+                <div class="price">4.25SR</div>
+                <div class="stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <a href="#" class="btn add-to-cart-btn">add to cart</a>
+            </div>
+            <!-- Product 5 -->
+            <div class="swiper-slide box" data-id="milk" data-name="Milk" data-price="5.99" data-img="images/milkb.webp">
+                <img src="images/milkb.webp">
+                <h3>Milk</h3>
+                <div class="price">5.99SR</div>
+                <div class="stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <a href="#" class="btn add-to-cart-btn">add to cart</a>
+            </div>
+            <!-- Product 6 -->
+            <div class="swiper-slide box" data-id="yogurt" data-name="Yogurt" data-price="2.50" data-img="images/yogurtb.webp">
+                <img src="images/yogurtb.webp">
+                <h3>Yogurt</h3>
+                <div class="price">2.50SR</div>
+                <div class="stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <a href="#" class="btn add-to-cart-btn">add to cart</a>
+            </div>
+            <!-- Product 7 --> 
+                    
+            <div class="swiper-slide box" data-id="cherries" data-name="Cherries" data-price="30.00" data-img="images/cherriesb.webp">
+                <img src="images/cherriesb.webp">
+                <h3>Cherries</h3>
+                <div class="price">30.00SR</div>
+                <div class="stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <a href="#" class="btn add-to-cart-btn">add to cart</a>
+            </div>
+            <!-- Product 8 -->
+            <div class="swiper-slide box" data-id="mango" data-name="Mango" data-price="7.99" data-img="images/mangob.webp">
+                <img src="images/mangob.webp">
+                <h3>Mango</h3>
+                <div class="price">7.99SR</div>
+                <div class="stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <a href="#" class="btn add-to-cart-btn">add to cart</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- products section ends -->
+
+    <!-- review section starts -->
+<section class="review" id="review">
+    <h1 class="heading">customer's <span>review</span></h1>
+    <div class="swiper review-slider">
+        <div class="swiper-wrapper" id="reviewContainer">
+            <!-- Existing static reviews (optional, or you can load everything dynamically) -->
+            <div class="swiper-slide box">
+                <img src="images/bag.webp">
+                <p>the mango tasted amazing and fresh and the delevery guy was really fast.</p>
+                <h3>Roba</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- review section ends -->
+
+<!-- review form -->
+<div class="review-form-container" style="max-width: 600px; margin: 40px auto; padding: 20px;">
+    <h2 style="text-align: center;">Submit Your Review</h2>
+    <form id="reviewForm">
+        <input type="text" id="reviewUsername" placeholder="Your name" required 
+               style="width: 100%; padding: 10px; margin-bottom: 15px;">
+        <textarea id="reviewText" placeholder="Write your review..." required 
+                  style="width: 100%; padding: 10px; margin-bottom: 15px; min-height: 100px;"></textarea>
+        <input type="number" id="reviewRating" placeholder="Rating (1-5)" min="1" max="5" required 
+               style="width: 100%; padding: 10px; margin-bottom: 15px;">
+        <button type="submit" style="width: 100%; padding: 12px; background-color: #4caf50; color: white; border: none;">
+            Submit Review
+        </button>
+    </form>
+</div>
+
+<script>
+// Wait for DOM to be fully loaded before initializing Swiper
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize Swiper for reviews
+    var reviewSwiper = new Swiper('.review-slider', {
+        loop: true,
+        grabCursor: true,
+        spaceBetween: 20,
+        breakpoints: {
+            0: { slidesPerView: 1 },
+            640: { slidesPerView: 2 },
+            768: { slidesPerView: 3 },
+            1024: { slidesPerView: 4 },
+        },
+    });
+
+    // Function to render stars based on rating
+    function getStars(rating) {
+        let stars = "";
+        rating = parseFloat(rating);
+        for (let i = 1; i <= 5; i++) {
+            if (i <= rating) {
+                stars += '<i class="fas fa-star"></i>';
+            } else if (i - rating === 0.5) {
+                stars += '<i class="fas fa-star-half-alt"></i>';
+            } else {
+                stars += '<i class="far fa-star"></i>';
+            }
+        }
+        return stars;
+    }
+
+    // Function to add one review to DOM
+    function addReviewToDOM({ username, review, rating }) {
+        const container = document.getElementById("reviewContainer");
+        const slide = document.createElement("div");
+        slide.classList.add("swiper-slide", "box");
+        slide.innerHTML = `
+            <img src="images/bag.webp" alt="${username}">
+            <p>${review}</p>
+            <h3>${username}</h3>
+            <div class="stars">${getStars(rating)}</div>
+        `;
+        container.appendChild(slide);
+    }
+
+    // Load all reviews from backend
+    async function loadReviews() {
+        try {
+            const res = await fetch("http://localhost:5000/review");
+            if (!res.ok) {
+                throw new Error('Failed to fetch reviews');
+            }
+            
+            const reviews = await res.json();
+            
+            // Add new reviews without removing existing ones
+            reviews.forEach(r => addReviewToDOM(r));
+            
+            // Update Swiper to recognize new slides
+            reviewSwiper.update();
+        } catch (err) {
+            console.error("Error loading reviews:", err);
+        }
+    }
+
+    // Load reviews on page load
+    loadReviews();
+
+    // Handle form submission
+    const reviewForm = document.getElementById("reviewForm");
+    if (reviewForm) {
+        reviewForm.addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            const username = document.getElementById("reviewUsername").value;
+            const review = document.getElementById("reviewText").value;
+            const rating = document.getElementById("reviewRating").value;
+
+            // Validate rating
+            if (rating < 1 || rating > 5) {
+                alert("Please enter a rating between 1 and 5");
+                return;
+            }
+
+            try {
+                const res = await fetch("http://localhost:5000/review", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ username, review, rating }),
+                });
+
+                const data = await res.json();
+                
+                if (data.success) {
+                    alert("Review submitted successfully!");
+                    // Add the new review to DOM
+                    addReviewToDOM({ username, review, rating });
+                    // Update Swiper
+                    reviewSwiper.update();
+                    // Reset form
+                    document.getElementById("reviewForm").reset();
+                } else {
+                    alert("Failed to submit review: " + data.message);
+                }
+            } catch (err) {
+                console.error("Error submitting review:", err);
+                alert("Failed to submit review. Please check your connection and try again.");
+            }
+        });
+    }
+});
+</script>
+    
+    <!-- footer section starts -->
+
+    <section class="footer" id="footer">
+        <div class="box-container">
+            <div class="box">
+                <h3>Basket <i class="fas fa-shopping-basket"></i></h3>
+                <p>please follow all our social medias for our updates and best offers.</p>
+                <div class="share">
+                    <a href="#" class="fab fa-facebook-f"></a>
+                    <a href="#" class="fab fa-twitter"></a>
+                    <a href="#" class="fab fa-instagram"></a>
+                    <a href="#" class="fab fa-linkedin"></a>
+                </div>
+            </div>
+            <div class="box">
+                <h3>content info</h3>
+                <a href="#" class="links"><i class="fas fa-phone"></i> +966-50-3490970 </a>
+                <a href="#" class="links contact-through-email"><i class="fas fa-envelope"></i> connectwithBaskit@gmail.com </a>
+                <a href="#" class="links"><i class="fas fa-map-marker-alt"></i> Riyadh, saudiArabai - 5050 </a>
+            </div>
+            <div class="box">
+                <h3>quick links</h3>
+                <a href="#home" class="links"><i class="fas fa-arrow-right"></i> home </a>
+                <a href="#features" class="links"><i class="fas fa-arrow-right"></i> features </a>
+                <a href="#categories" class="links"><i class="fas fa-arrow-right"></i> categories </a>
+                <a href="#products" class="links"><i class="fas fa-arrow-right"></i> products </a>
+                <a href="#review" class="links"><i class="fas fa-arrow-right"></i> review </a>
+                
+            </div>
+            
+        
+    </section>
+
+    <!-- footer section ends -->
+
+    <!-- custom javascript section starts -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.0.0/swiper-bundle.min.js"></script>
+    
+
+    <!-- custom javascript section ends -->
+<script src="cart.js"></script>
+<script src="script.js"></script> 
+
+</body>
+</html>

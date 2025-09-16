@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruit page</title>
+ <!--Firebase-->
+    <script type="module" src="firebaseauth.js"></script>
+    <!-- swiper cdn link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.0.0/swiper-bundle.min.css" />
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+    <!-- header section starts -->
+
+    <header class="header">
+        <a href="#" class="logo"><i class="fas fa-shopping-basket"></i> Basket </a>
+        <nav class="navbar">
+         <a href="index.html">home</a> 
+         <a href="snacks.html">snacks</a>
+         <a href="dairy.html">dairy</a>   
+            
+        </nav>
+
+        <div class="icons">
+            <div class="fas fa-bars" id="menu-btn"></div>
+            <div class="fas fa-search" id="search-btn"></div>
+            <a href="cart.html" id="cart-btn">
+              <div class="fas fa-shopping-cart"></div>
+            </a>
+            <div class="fas fa-user" id="login-btn"></div>
+        </div>
+
+        <form action="" class="search-form">
+            <input type="search" id="search-box" placeholder="search here...">
+            <label for="search-box" class="fas fa-search"></label>
+        </form>
+
+       
+
+    </header>
+    <!-- header section ends -->
+
+    <!-- home section starts -->
+
+    <section class="home" id="home">
+        <div class="content">
+            <h3> <span>Fruit</span> </h3>
+            <p>freash and clean fruit for your liking with 35% off.</p>
+            <a href="#" class="btn">shop now</a>
+        </div>
+    </section>
+
+    <!-- home section ends -->
+    
+     <!-- products section starts -->
+
+    <section class="products" id="products-page3">
+    <h1 class="heading"> our <span>products</span> </h1>
+
+    <div class="swiper product-slider">
+        <div class="swiper-wrapper">
+            <!-- Product 1 -->
+            <div class="swiper-slide box" data-id="apple" data-name="Apple" data-price="3.00" data-img="images/appleb.webp">
+                <img src="images/appleb.webp">
+                <h3>Apple</h3>
+                <div class="price">3.00SR</div>
+                <div class="stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <a href="#" class="btn add-to-cart-btn">add to cart</a>
+            </div>
+            <!-- Product 2 -->
+            <div class="swiper-slide box" data-id="oranges" data-name="Oranges" data-price="2.50" data-img="images/orangeb.webp">
+                <img src="images/orangeb.webp">
+                <h3>Oranges</h3>
+                <div class="price">2.50SR</div>
+                <div class="stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <a href="#" class="btn add-to-cart-btn">add to cart</a>
+            </div>
+            <!-- Product 3 -->
+            <div class="swiper-slide box" data-id="watermelon" data-name="Watermelon" data-price="5.75" data-img="images/watermelon.webp">
+                <img src="images/watermelon.webp">
+                <h3>Watermelon</h3>
+                <div class="price">5.75SR</div>
+                <div class="stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <a href="#" class="btn add-to-cart-btn">add to cart</a>
+            </div>
+            <!-- Product 4 -->
+            <div class="swiper-slide box" data-id="raspberry" data-name="Raspberry" data-price="4.25" data-img="images/raspberry.webp">
+                <img src="images/raspberry.webp">
+                <h3>Raspberry</h3>
+                <div class="price">4.25SR</div>
+                <div class="stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <a href="#" class="btn add-to-cart-btn">add to cart</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="swiper product-slider">
+        <div class="swiper-wrapper">
+            <!-- Product 5 -->
+            <div class="swiper-slide box" data-id="pinaple" data-name="Pinaple" data-price="5.99" data-img="images/pinaple.webp">
+                <img src="images/pinaple.webp">
+                <h3>Pinaple</h3>
+                <div class="price">5.99SR</div>
+                <div class="stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <a href="#" class="btn add-to-cart-btn">add to cart</a>
+            </div>
+            <!-- Product 6 -->
+            <div class="swiper-slide box" data-id="pear" data-name="Pear" data-price="2.50" data-img="images/pear.webp">
+                <img src="images/pear.webp">
+                <h3>Pear</h3>
+                <div class="price">2.50SR</div>
+                <div class="stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                  <a href="#" class="btn add-to-cart-btn">add to cart</a>
+            </div>
+            <!-- Product 7 -->
+            <div class="swiper-slide box" data-id="cherries" data-name="Cherries" data-price="30.00" data-img="images/cherriesb.webp">
+                <img src="images/cherriesb.webp">
+                <h3>Cherries</h3>
+                <div class="price">30.00SR</div>
+                <div class="stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <a href="#" class="btn add-to-cart-btn">add to cart</a>
+            </div>
+            <!-- Product 8 -->
+            <div class="swiper-slide box" data-id="mango" data-name="Mango" data-price="7.99" data-img="images/mangob.webp">
+                <img src="images/mangob.webp">
+                <h3>Mango</h3>
+                <div class="price">7.99SR</div>
+                <div class="stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <a href="#" class="btn add-to-cart-btn">add to cart</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- products section ends -->
+
+  
+
+    
+    <!-- footer section starts -->
+
+    <section class="footer" id="footer">
+        <div class="box-container">
+            <div class="box">
+                <h3>Basket <i class="fas fa-shopping-basket"></i></h3>
+                <p>please follow all our social medias for our updates and best offers.</p>
+                <div class="share">
+                    <a href="#" class="fab fa-facebook-f"></a>
+                    <a href="#" class="fab fa-twitter"></a>
+                    <a href="#" class="fab fa-instagram"></a>
+                    <a href="#" class="fab fa-linkedin"></a>
+                </div>
+            </div>
+            <div class="box">
+                <h3>content info</h3>
+                <a href="#" class="links"><i class="fas fa-phone"></i> +966-50-3490970 </a>
+                <a href="#" class="links contact-through-email"><i class="fas fa-envelope"></i> connectwithBaskit@gmail.com </a>
+                <a href="#" class="links"><i class="fas fa-map-marker-alt"></i> Riyadh, saudiArabai - 5050 </a>
+            </div>
+            <div class="box">
+                <h3>quick links</h3>
+                <a href="index.html" class="links"><i class="fas fa-arrow-right"></i> home </a>
+                <a href="#products" class="links"><i class="fas fa-arrow-right"></i> products </a>
+                
+                
+            </div>
+            
+        
+    </section>
+
+    <!-- footer section ends -->
+
+    <!-- custom javascript section starts -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.0.0/swiper-bundle.min.js"></script>
+    <script src="script.js"></script> 
+
+    <!-- custom javascript section ends -->
+<script src="cart.js"></script>
+</body>
+</html>
